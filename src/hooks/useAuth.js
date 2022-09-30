@@ -2,6 +2,7 @@ import React, { useState, useContext, createContext } from 'react';
 import Cookie from 'js-cookie';
 import axios from 'axios';
 import endPoints from '@services/api';
+import { useRouter } from 'next/router';
 
 const AuthContext = createContext();
 
@@ -15,6 +16,7 @@ export const useAuth = () => {
 };
 
 function useProvideAuth() {
+  const router = useRouter();
   const [user, setUser] = useState(null);
 
   const signIn = async (email, password) => {
@@ -33,9 +35,15 @@ function useProvideAuth() {
       setUser(user);
     }
   };
-
+  const logout = () => {
+    Cookie.remove('token');
+    setUser(null);
+    delete axios.defaults.headers.Authorization;
+    router.push('/login');
+  };
   return {
     user,
     signIn,
+    logout,
   };
 }
