@@ -20,7 +20,7 @@ export default function FormProduct({ setOpen, setAlert }) {
           active: true,
           message: 'Product added successfully',
           type: 'success',
-          autoclose: false,
+          autoClose: false,
         });
         setOpen(false);
       })
@@ -29,7 +29,7 @@ export default function FormProduct({ setOpen, setAlert }) {
           active: true,
           message: error.message,
           type: 'error',
-          autoclose: false,
+          autoClose: false,
         });
       });
   };
