@@ -13,6 +13,7 @@ export const Chart = ({ chartData }) => {
             display: true,
             text: 'Category',
             fontSize: 20,
+            fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
           },
           legend: {
             display: true,
