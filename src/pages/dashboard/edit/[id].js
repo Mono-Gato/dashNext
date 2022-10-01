@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import FormProduct from '@components/FormProduct';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
